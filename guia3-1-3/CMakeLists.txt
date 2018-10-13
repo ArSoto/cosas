@@ -3,4 +3,4 @@ project(guia3_1_3)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(guia3_1_3 main.cpp Nodos.h Postres.cpp Postres.h)
+add_executable(guia3_1_3 main.cpp Nodos.h Postre.cpp Postre.h Ingredientes.cpp Ingredientes.h)
