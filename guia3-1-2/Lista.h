@@ -13,6 +13,7 @@ private:
     Nodo *raiz = NULL;
     Nodo *ultimo = NULL;
 
+
 public:
     /* constructor*/
     Lista();
@@ -21,10 +22,8 @@ public:
 
     /* imprime la lista. */
     void imprimir ();
+    /* Inserta los nombre en la lista de forma ordenada*/
     void insertar(string nombre);
-
-    void agregar(string nombre);
-    Nodo *get_raiz();
 
 
 };

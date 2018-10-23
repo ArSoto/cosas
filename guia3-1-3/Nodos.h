@@ -6,6 +6,7 @@ using namespace std;
 #ifndef NODOS_H
 #define NODOS_H
 
+/* Nodo para los ingredientes*/
 typedef struct _Ingrediente{
 
     string nombre;
@@ -14,10 +15,11 @@ typedef struct _Ingrediente{
 
 }Nodo_Ingrediente;
 
+/* Nodo para los postres*/
 typedef struct _Postre {
     string nombre;
     struct _Postre *sigPostre;
-    struct _Ingredientes *sigIngre;
-} Nodo_Ingredientes;
+
+} Nodo_Postre;
 
 #endif

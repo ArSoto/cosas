@@ -10,9 +10,10 @@
  * ###################################*/
 class Postre {
 private:
-    Nodo_Ingredientes *raiz = NULL;
-    Nodo_Ingredientes *ultimo = NULL;
+    Nodo_Postre *raiz = NULL;
+    Nodo_Postre *ultimo = NULL;
     Ingredientes *ingredientes;
+
 
 
 
@@ -24,10 +25,15 @@ public:
 
     /* imprime la lista. */
     void imprimir ();
+    /* Inserta nodo ordenado alfabeticamente*/
     void insertar(string nombre);
 
-    void agregar(string nombre);
-    Nodo_Ingredientes *get_raiz();
+    /* elimina un nodo por seleccionado por el nombre*/
+    void eliminar(string nombre);
+
+    /* busca el nombre del postre en la lista y retorna los ingredientes de este*/
+    Ingredientes *buscar(string nombre);
+
 
 
 };

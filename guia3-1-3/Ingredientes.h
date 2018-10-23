@@ -9,8 +9,8 @@ using namespace std;
 class Ingredientes {
 private:
 
-    Nodo_Ingredientes *raiz = NULL;
-    Nodo_Ingredientes *ultimo = NULL;
+    Nodo_Ingrediente *raiz = NULL;
+    Nodo_Ingrediente *ultimo = NULL;
 
 
 
@@ -23,10 +23,13 @@ public:
 
     /* imprime la lista. */
     void imprimir ();
-    void insertar(string nombre);
 
+    /* Agrega nodos a la lista*/
     void agregar(string nombre);
-    Nodo_Ingredientes *get_raiz();
+
+    /*Elimina nodos de la lista */
+    void eliminar(string nombre);
+
 
 
 };

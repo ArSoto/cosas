@@ -3,4 +3,12 @@ project(guia_3_1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(guia_3_1 main.cpp Nodo.h Lista.cpp Lista.h)
+include_directories(.)
+
+add_executable(guia_3_1
+        Arbol.cpp
+        Arbol.h
+        main.cpp
+        Makefile
+        Nodo.h
+        Readme.txt)

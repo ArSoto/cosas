@@ -22,13 +22,13 @@ int main() {
 
 
 
-    cout<< "Datos para la Lista Principal: "<<endl;
+    cout<< "Nombres Para la lista principal: "<<endl;
     llenar(lista_principal);
 
 
     cout<<"........................................................"<<endl;
 
-    /* Imprimir las 3 listas */
+    /* Imprimir la lista */
 
     cout << "Lista Principal:"<< endl;
     lista_principal->imprimir();
@@ -44,16 +44,16 @@ int main() {
 /* Funcion para agregar los valores iniciales a la lista*/
 void llenar(Lista *lista){
 
-    string numero= " ";
+    string nombre= " ";
     bool ciclo = true;
     string salir = "";
 
     while (salir != "n")
     {
-        cout<< "Numero:" << endl;
-        cin >> numero;
+        cout<< "Nombre:" << endl;
+        cin >> nombre;
 
-        lista->insertar(numero);
+        lista->insertar(nombre);
         lista->imprimir();
         cin.ignore();
 

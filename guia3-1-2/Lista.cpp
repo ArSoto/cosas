@@ -88,30 +88,5 @@ void Lista::insertar(string nombre)
 
 }
 
-/*metodo para insertar un nuevo nodo a la lista */
-void Lista::agregar(string nombre) {
 
 
-    /* Crea el nuevo nodo y le asigna el valor */
-    Nodo *aux = new Nodo;
-    aux->nombre = nombre;
-    aux->sig = NULL;
-
-    /* si es el primer nodo de la lista lo deja como primero y ultimo*/
-    if (this->raiz == NULL) {
-        this->raiz = aux;
-        this->ultimo = this->raiz;
-
-        return;
-    }
-
-    this->ultimo->sig = aux;
-    this->ultimo = aux;
-
-}
-
-/*Metodo retorna la pocicion inical del nodo*/
-Nodo * Lista::get_raiz(){
-    return this-> raiz;
-
-}

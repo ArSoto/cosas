@@ -8,24 +8,19 @@
 /* ##################################
  * Definicion de la Clase Listas
  * ###################################*/
-class Lista {
+class Arbol {
 private:
     Nodo *raiz = NULL;
-    Nodo *ultimo = NULL;
 
 public:
     /* constructor*/
-    Lista();
+    Arbol();
 
-    /* PROTOTIPO METODOS DE LA CLASE LISTAS*/
+    void agregar(Nodo *, int);
 
-    /* imprime la lista. */
-    void imprimir ();
-    void insertar(int numero);
+    Nodo *crearNodo(int);
 
-    void agregar(int numero);
-    Nodo *get_raiz();
-
+    Nodo *getRaiz();
 
 };
 

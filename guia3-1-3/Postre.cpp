@@ -2,36 +2,36 @@
 #include "Postre.h"
 
 
-
-
-
 /* ################################
  * Metodos de la Clase Lista
  * ################################*/
-Postre::Postre() {}
+
+Postre::Postre(){
+    ingredientes = new Ingredientes;
+};
 
 void Postre::imprimir () {
     /* utiliza variable temporal para recorrer la lista. */
-    Nodo_Ingredientes *tmp = this->raiz;
+    Nodo_Postre *tmp = this->raiz;
 
     /* la recorre mientras sea distinto de NULL (no hay más nodos). */
     while (tmp != NULL) {
-        cout << " <-  " << tmp->nombre ;
+        cout << tmp->nombre << endl ;
         tmp = tmp -> sigPostre;
     }
     cout << endl << endl;
 }
 
-/* Metodo para insertar un nuevo nodo a la lista en orden creciente */
+/* Metodo para insertar un nuevo nodo a Nodo_Ingredientesla lista en orden creciente */
 void Postre::insertar(string nombre)
 {
 
     /*variables temporal para recorrer la lista. */
-    Nodo_Ingredientes *tmp = this->raiz;
-    Nodo_Ingredientes *tmp2= tmp;
+    Nodo_Postre *tmp = this->raiz;
+    Nodo_Postre *tmp2= tmp;
 
     /* Crea el nuevo nodo y le asigna el valor */
-    Nodo_Ingredientes *aux = new Nodo_Ingredientes;
+    Nodo_Postre *aux = new Nodo_Postre;
     aux -> nombre = nombre;
     aux->sigPostre = NULL;
 
@@ -88,30 +88,71 @@ void Postre::insertar(string nombre)
 
 }
 
-/*metodo para insertar un nuevo nodo a la lista */
-void Postre::agregar(string nombre) {
+
+/* metodo que elimina un nodo de la lista */
+void Postre::eliminar(string nombre) {
+
+    int band = 1;
 
 
-    /* Crea el nuevo nodo y le asigna el valor */
-    Nodo_Ingredientes *aux = new Nodo_Ingredientes;
-    aux->nombre = nombre;
-    aux->sigPostre = NULL;
+    Nodo_Postre *tmp1;
+    tmp1 = this->raiz;
 
-    /* si es el primer nodo de la lista lo deja como primero y ultimo*/
-    if (this->raiz == NULL) {
-        this->raiz = aux;
-        this->ultimo = this->raiz;
+    Nodo_Postre *tmp2;
 
-        return;
+    while (tmp1->nombre != nombre && band == 1) {
+        if (tmp1->sigPostre != NULL) {
+
+            tmp2 = tmp1;
+            tmp1 = tmp1->sigPostre;
+
+        } else {
+            band = 0;
+        }
+
+
     }
 
-    this->ultimo->sigPostre = aux;
-    this->ultimo = aux;
+    if (band == 0) {
+        cout << "El ingrediente que desea eliminar no existe en el listado " << endl;
+
+
+    } else if (tmp1 == this->raiz) {
+
+        this->raiz = tmp1->sigPostre;
+
+    } else {
+
+        tmp2->sigPostre = tmp1->sigPostre;
+    }
+}
+
+
+
+Ingredientes *Postre::buscar(string nombre) {
+
+    int band = 1;
+
+    Nodo_Postre *tmp;
+    tmp =  this ->raiz;
+
+    /* Recorre la lista hasta que encuentra el valor o se llego al final de la lista */
+    while (tmp ->nombre !=  nombre && band == 1 )
+    {
+        if (tmp -> sigPostre != NULL){
+
+            tmp = tmp -> sigPostre;
+        } else{
+            band = 0;
+
+        }
+    }
+
+
+    return this ->ingredientes;
+
 
 }
 
-/*Metodo retorna la pocicion inical del nodo*/
-Nodo_Ingredientes * Postre::get_raiz(){
-    return this-> raiz;
 
-}
+

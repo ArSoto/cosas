@@ -9,7 +9,8 @@
 
 typedef struct _Nodo {
     int numero;
-    struct _Nodo *sig;
+    struct _Nodo *izq;
+    struct _Nodo *der;
 } Nodo;
 
 #endif 
