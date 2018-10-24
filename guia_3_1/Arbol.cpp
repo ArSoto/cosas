@@ -10,7 +10,7 @@ Arbol::Arbol() {}
 
 
 /*metodo para insertar un nuevo nodo al arbol */
-void Arbol::agregar(Nodo *aux, int numero) {
+void Arbol::agregar(Nodo *&aux, int numero) {
 
 
     /* si es el primer nodo de la lista lo deja como primero */
@@ -32,11 +32,9 @@ void Arbol::agregar(Nodo *aux, int numero) {
 
 
         } else if(numero > aux ->numero){
-            if (aux->der != NULL) {
-                agregar(aux->der, numero);
-            } else {
-                aux->izq = crearNodo(numero);
-            }
+
+            agregar(aux->der, numero);
+
         }else
         {
             cout << "El numero ingresado ya estaba en la lista. " << endl;
@@ -59,7 +57,93 @@ Nodo *Arbol::crearNodo(int numero) {
     aux -> izq = NULL;
 }
 
-Nodo *Arbol::getRaiz() {
+Nodo *& Arbol::getRaiz() {
     return raiz;
 }
 
+void Arbol::eliminar(Nodo *&tmp, int numero) {
+
+    Nodo *aux = NULL; //aux
+    Nodo *aux2 = NULL;  //ax1
+    Nodo *otro = NULL;  //otro
+    bool bol;
+
+    if (tmp != NULL){       //1
+        if (numero < tmp -> numero ){     //1.1
+            eliminar(tmp -> der , numero);
+                        
+        } else if (numero > tmp -> numero){     //1.1.1
+
+                eliminar(tmp -> der, numero);
+
+        } else{
+            otro =tmp;
+
+            if (otro -> der == NULL){     //1.1.1.1
+                    tmp = otro -> izq;
+
+
+                } else if(otro -> izq == NULL) {  //1.1.1.1.1
+                        tmp = otro->der;
+
+                    } else {
+                aux = tmp->izq;
+                bol = false;
+                while (aux->der != NULL) { //a
+                    aux2 = aux;
+                    aux = aux->der;
+                    bol = true;
+                }
+                tmp->numero = aux->numero;
+                otro = aux;
+
+                if (bol) {
+                    aux2->der = aux;
+                } else {
+                    tmp->izq = aux->izq;
+                }
+            }
+
+        }
+    } else{
+        cout << "El numero a elimiminar no esta en el nodo" << endl;
+    }
+
+}
+
+void Arbol::modificar(int original , int cambio) {
+
+    if (buscar(raiz, original)){
+        if (!buscar(raiz, cambio)){
+            eliminar(raiz, original);
+            agregar(raiz, cambio);
+
+        } else{
+            cout << "El numero a ingresar ya esta en el arbol" <<endl;
+        }
+
+    } else{
+        cout << "El numero a cambiar no se encuentra en el arbol" << endl;
+    }
+
+}
+
+bool Arbol::buscar(Nodo *&tmp, int numero) {
+
+    if (tmp != NULL) {
+        if (numero < tmp->numero) {
+            buscar(tmp->izq, numero);
+
+        } else if (numero > tmp->numero) {
+            buscar(tmp->der, numero);
+
+        } else {         // numero encontrado
+            return true;
+        }
+
+
+    } else {             // Numero no encontrado
+
+        return false;
+    }
+}

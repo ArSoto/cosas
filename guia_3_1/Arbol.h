@@ -11,16 +11,22 @@
 class Arbol {
 private:
     Nodo *raiz = NULL;
-
+    Nodo *crearNodo(int);
 public:
     /* constructor*/
     Arbol();
 
-    void agregar(Nodo *, int);
+    void agregar(Nodo *&, int);
 
-    Nodo *crearNodo(int);
+    void eliminar(Nodo *&, int);
 
-    Nodo *getRaiz();
+    Nodo *& getRaiz();
+
+    void modificar(int, int);
+
+    bool buscar(Nodo *& , int);
+
+
 
 };
 
