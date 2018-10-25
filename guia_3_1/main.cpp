@@ -60,9 +60,26 @@ void menu(Arbol  *arbol){
                 cin >> numero2;
 
                 switch (numero2){
+
+                    case 1:
+                        arbol -> imprimirInorden( arbol -> getRaiz());
+                        cout << endl;
+                        break;
+
+                    case 2:
+                        arbol -> imprimirPosorden( arbol -> getRaiz());
+                        cout << endl;
+                        break;
+
+                    case 3:
+                        arbol-> imprimirPreorden( arbol -> getRaiz());
+                        cout << endl;
+                        break;
                     default:
                         cout << "La opcion ingresada no es valida " << endl;
+                        break;
                 }
+                break;
 
             default:
                 cout <<"Numero no valido" << endl;

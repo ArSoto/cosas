@@ -181,6 +181,7 @@ void Arbol::imprimirInorden(Nodo *&arbol) {
     if (arbol != NULL){
         imprimirInorden(arbol -> izq);
         cout <<  arbol -> numero;
+        imprimirInorden(arbol -> der);
     }
 
 }
