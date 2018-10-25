@@ -28,12 +28,12 @@ void Arbol::agregar(Nodo *&aux, int numero) {
         if (numero  < aux -> numero)
         {
 
-            agregar(aux->izq, numero);
+            agregar(aux -> izq, numero);
 
 
         } else if(numero > aux ->numero){
 
-            agregar(aux->der, numero);
+            agregar(aux -> der, numero);
 
         }else
         {
@@ -98,9 +98,9 @@ void Arbol::eliminar(Nodo *&tmp, int numero) {
                 otro = aux;
 
                 if (bol) {
-                    aux2->der = aux;
+                    aux2 -> der = aux;
                 } else {
-                    tmp->izq = aux->izq;
+                    tmp -> izq = aux -> izq;
                 }
             }
 
@@ -146,4 +146,41 @@ bool Arbol::buscar(Nodo *&tmp, int numero) {
 
         return false;
     }
+}
+
+void Arbol::imprimirPosorden(Nodo *&arbol) {
+
+    if (arbol != NULL){
+
+        imprimirPosorden(arbol -> izq);
+        imprimirPosorden(arbol -> der);
+        cout << arbol ->numero << " " ;
+
+    }
+
+    cout << endl;
+
+}
+
+void Arbol::imprimirPreorden(Nodo *&arbol) {
+
+    if (arbol != NULL){
+        cout << arbol -> numero;
+
+        imprimirPreorden(arbol -> izq);
+        imprimirPreorden(arbol -> der);
+
+    }
+
+    cout<< endl;
+
+}
+
+void Arbol::imprimirInorden(Nodo *&arbol) {
+
+    if (arbol != NULL){
+        imprimirInorden(arbol -> izq);
+        cout <<  arbol -> numero;
+    }
+
 }

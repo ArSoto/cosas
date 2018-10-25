@@ -51,7 +51,18 @@ void menu(Arbol  *arbol){
                 cin >> numero;
                 cout << "Numero de remplazo" << endl;
                 cin >> numero2;
-                arbol ->modificar(numero, numero2);
+                arbol -> modificar(numero, numero2);
+                break;
+
+            case 4:
+                cout << "Como desea imprimir el arbol"<< endl;
+                cout << "[1] Inorden \n [2] Posorden \n  [3] Preorden" << endl;
+                cin >> numero2;
+
+                switch (numero2){
+                    default:
+                        cout << "La opcion ingresada no es valida " << endl;
+                }
 
             default:
                 cout <<"Numero no valido" << endl;

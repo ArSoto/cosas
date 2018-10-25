@@ -26,6 +26,12 @@ public:
 
     bool buscar(Nodo *& , int);
 
+    void imprimirPosorden(Nodo *&);
+
+    void  imprimirPreorden(Nodo *&);
+
+    void  imprimirInorden(Nodo *&);
+
 
 
 };
