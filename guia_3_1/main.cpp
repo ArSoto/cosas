@@ -6,12 +6,10 @@ void menu(Arbol *);
 
 
 int main() {
-    int c=1;
-    Arbol *arbol = new Arbol;
+    Arbol *arbol ;
+    arbol = new Arbol;
 
         menu(arbol);
-
-
 
 }
 
