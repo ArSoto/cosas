@@ -81,6 +81,9 @@ void menu(Arbol  *arbol){
                 }
                 break;
 
+            case 9:
+                continue;
+
             default:
                 cout <<"Numero no valido" << endl;
 

@@ -158,21 +158,18 @@ void Arbol::imprimirPosorden(Nodo *&arbol) {
 
     }
 
-    cout << endl;
 
 }
 
 void Arbol::imprimirPreorden(Nodo *&arbol) {
 
     if (arbol != NULL){
-        cout << arbol -> numero;
+        cout << arbol -> numero << " ";
 
         imprimirPreorden(arbol -> izq);
         imprimirPreorden(arbol -> der);
 
     }
-
-    cout<< endl;
 
 }
 
@@ -180,7 +177,7 @@ void Arbol::imprimirInorden(Nodo *&arbol) {
 
     if (arbol != NULL){
         imprimirInorden(arbol -> izq);
-        cout <<  arbol -> numero;
+        cout <<  arbol -> numero << " ";
         imprimirInorden(arbol -> der);
     }
 
