@@ -1,0 +1,3 @@
+/home/arturing/CLionProjects/Trabajos/Guia_4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/arturing/CLionProjects/Trabajos/Guia_4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/arturing/CLionProjects/Trabajos/Guia_4/cmake-build-debug/CMakeFiles/Guia_4.dir

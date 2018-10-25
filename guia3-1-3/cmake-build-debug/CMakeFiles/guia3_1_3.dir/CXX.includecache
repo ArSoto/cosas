@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arturing/CLionProjects/Trabajos/guia3-1-3/Ingredientes.h
+Nodos.h
+/home/arturing/CLionProjects/Trabajos/guia3-1-3/Nodos.h
+
+/home/arturing/CLionProjects/Trabajos/guia3-1-3/Nodos.h
+string
+-
+
+/home/arturing/CLionProjects/Trabajos/guia3-1-3/Postre.cpp
+iostream
+-
+Postre.h
+/home/arturing/CLionProjects/Trabajos/guia3-1-3/Postre.h
+
+/home/arturing/CLionProjects/Trabajos/guia3-1-3/Postre.h
+Nodos.h
+/home/arturing/CLionProjects/Trabajos/guia3-1-3/Nodos.h
+Ingredientes.h
+/home/arturing/CLionProjects/Trabajos/guia3-1-3/Ingredientes.h
+
