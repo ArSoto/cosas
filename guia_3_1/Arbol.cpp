@@ -70,7 +70,7 @@ void Arbol::eliminar(Nodo *&tmp, int numero) {
 
     if (tmp != NULL){       //1
         if (numero < tmp -> numero ){     //1.1
-            eliminar(tmp -> der , numero);
+            eliminar(tmp -> izq , numero);
                         
         } else if (numero > tmp -> numero){     //1.1.1
 
@@ -95,7 +95,6 @@ void Arbol::eliminar(Nodo *&tmp, int numero) {
                     bol = true;
                 }
                 tmp->numero = aux->numero;
-                otro = aux;
 
                 if (bol) {
                     aux2 -> der = aux;

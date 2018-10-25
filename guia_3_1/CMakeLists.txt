@@ -11,4 +11,4 @@ add_executable(guia_3_1
         main.cpp
         Makefile
         Nodo.h
-        Readme.txt)
+        Readme.txt Grafo.cpp Grafo.h)

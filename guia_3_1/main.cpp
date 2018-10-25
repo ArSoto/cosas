@@ -1,19 +1,23 @@
 #include <iostream>
 #include "Arbol.h"
+#include "Grafo.h"
 using  namespace std;
 
-void menu(Arbol *);
+void menu(Arbol *, Grafo *);
 
 
 int main() {
     Arbol *arbol ;
     arbol = new Arbol;
 
-        menu(arbol);
+    Grafo *grafo;
+    grafo = new Grafo(arbol-> getRaiz());
+
+        menu(arbol, grafo);
 
 }
 
-void menu(Arbol  *arbol){
+void menu(Arbol  *arbol, Grafo *grafo){
     int opcion = 0;
     int numero = 0;
     int numero2 = 0;
@@ -22,10 +26,11 @@ void menu(Arbol  *arbol){
     {
         cout << "       MENU    " << endl;
         cout << endl;
-        cout << "[1] agregar Nodo al arbol" << endl;
+        cout << "[1] Agregar Nodo al arbol" << endl;
         cout << "[2] Eliminar nodo " << endl;
         cout << "[3] Modificar dato" << endl;
         cout << "[4] Imprimir  " << endl;
+        cout << "[5] Generar grafico" << endl;
         cout << "[9] Salir" << endl;
 
         cin >> opcion;
@@ -56,7 +61,7 @@ void menu(Arbol  *arbol){
 
             case 4:
                 cout << "Como desea imprimir el arbol"<< endl;
-                cout << "[1] Inorden \n [2] Posorden \n  [3] Preorden" << endl;
+                cout << " [1] Inorden \n [2] Posorden \n [3] Preorden" << endl;
                 cin >> numero2;
 
                 switch (numero2){
@@ -80,6 +85,11 @@ void menu(Arbol  *arbol){
                         break;
                 }
                 break;
+
+            case 5:
+                grafo = new Grafo(arbol->getRaiz());
+                grafo -> crearGrafo();
+
 
             case 9:
                 continue;
